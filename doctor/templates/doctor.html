@@ -1,0 +1,27 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+<body>
+    <h1><center> Doctor Details</center></h1><a href="{% url 'home' %}" button type="submit" class="btn btn-primary">Home</button></a>
+<div class="container">
+    <div class="row">
+  {% for items in doctors %}
+  <div class="col-md-3">
+     <div class="card">
+      <img src="{{items.image}}" class="card-img-top" width="250" height="150" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{items.name}}</h5>
+        <p class="card-text">${{items.place}}</p>
+        <p class="card-text">${{items.exp}}</p>
+        
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+  </div>
+{% endblock %}
+
+
+
+

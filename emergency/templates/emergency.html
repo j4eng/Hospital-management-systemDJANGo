@@ -1,0 +1,17 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+
+<div class="container">
+    <form  class="form-control" method="POST">
+      {% csrf_token %}
+      <fieldset>
+        <legend>Form</legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button> &nbsp <a href="{% url 'home' %}" button type="submit" class="btn btn-primary">Home</button></a>
+      </fieldset>
+    </form>
+</div>
+
+    {% endblock %}
